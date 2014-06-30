@@ -35,8 +35,6 @@ allow cne mediaserver:fd use;
 allow cne diag_device:chr_file rw_file_perms;
 allow cne qmuxd_socket:dir search;
 
-allow cne sysfs_wake_lock:file rw_file_perms;
-
 # Talk to init over the property socket
 unix_socket_connect(cne, property, init)
 allow cne system_prop:property_service set;
