@@ -245,6 +245,9 @@ set_light_buttons(struct light_device_t *dev,
 
     pthread_mutex_lock(&g_lock);
 
+    if(brightness > 0)
+	brightness = 255;
+
     err = write_int(BUTTONS_FILE, brightness);
 
     pthread_mutex_unlock(&g_lock);
